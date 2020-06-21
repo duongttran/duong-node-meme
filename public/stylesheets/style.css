@@ -1,0 +1,38 @@
+body {
+  
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+
+a {
+  color: #00B7FF;
+}
+
+.main-section {
+  padding: 50px;
+}
+
+.footer {
+  background-color: lightgrey;
+}
+
+.text-center{
+  display : flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+#img-render {
+  max-width: 500px;
+  height: auto;
+  margin: 20px 0;
+}
+
+.style-image {
+  max-width: 500px;
+  height: auto;
+  margin: 20px 0;
+}
+
