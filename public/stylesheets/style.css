@@ -1,8 +1,6 @@
-body {
-  
+body { 
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
-
 
 a {
   color: #00B7FF;
@@ -11,6 +9,8 @@ a {
 .main-section {
   padding: 50px;
 }
+
+
 
 .footer {
   background-color: lightgrey;
@@ -25,14 +25,29 @@ a {
 }
 
 #img-render {
-  max-width: 500px;
-  height: auto;
+  width: 500px;
+  height: 50%;
   margin: 20px 0;
 }
 
 .style-image {
-  max-width: 500px;
-  height: auto;
+  width: 500px;
+  height: 50%;
   margin: 20px 0;
+}
+
+.modal-w {
+  display: flex;
+  flex-direction: column;
+  max-width: 375px;
+  padding: 30px;
+  border: 1px grey solid;
+  border-radius: 5px;
+  margin: 0 auto;
+  display: none;
+}
+
+.modal-w img {
+  width: 100%;
 }
 

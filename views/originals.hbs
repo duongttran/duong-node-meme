@@ -1,7 +1,55 @@
 {{#if images}}
 
+    <div class="modal-w" id="modal-window">
+        <div id="img-wrapper" class="img-wrapper">
+
+        </div>
+        <img source={{this.filename.src.nodeValue}}/>
+        <input id="top" type="text"/ placeholder="top content">
+        <input id="bottom" type="text"/ placeholder="top content">
+        <button onclick="saveContent()">Save</button> 
+
+        <button onclick="closeModal()">Close</button>
+    </div>
+
 {{#each images}}
-<img src="{{../path}}{{this.filename}}" alt={{this.filename}}/>
+
+<img onclick="openModal(event)" src="{{../path}}{{this.filename}}" class="style-image" data-img={{../path}}{{this.filename}} alt={{this.filename}} />
+
 {{/each}}
 
 {{/if}}
+
+<script>
+let myImg=""
+function openModal(event) {
+    console.log(event.target.attributes[3].nodeValue)
+    myImg=event.target.attributes[3].nodeValue
+    document.getElementById("img-wrapper").innerHTML=`<img src="${event.target.attributes[3].nodeValue}" alt="">`
+    var modal= document.getElementById("modal-window");
+    modal.style="display:block";
+}
+
+function closeModal() {
+    var modal= document.getElementById("modal-window");
+     modal.style="display:none"
+}
+
+async function saveContent()
+{
+ let data={
+     img: myImg,
+     top:document.getElementById("top").value,
+     bottom:document.getElementById("bottom").value,
+ }
+ 
+ let res= await fetch("browser/createMeme",{
+      method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(data)
+ })
+
+}
+</script>

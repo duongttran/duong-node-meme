@@ -20,7 +20,7 @@ const saveOriginals = data => {
 
 const loadMemes = () => {
     try {
-        const buffer = fs.readFileSync(pathData)
+        const buffer = fs.readFileSync(pathMeme)
         const string = buffer.toString()
         return JSON.parse(string)
     } catch (err) {
@@ -29,7 +29,7 @@ const loadMemes = () => {
 }
 
 const saveMemes = data => {
-    fetch.writeFileSync(pathData, JSON.stringify(data))
+    fetch.writeFileSync(pathMeme, JSON.stringify(data))
 }
 
 // const saveMemes = data => {}

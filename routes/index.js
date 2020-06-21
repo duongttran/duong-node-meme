@@ -8,7 +8,7 @@ router.get('/', function (req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-router.post("/upload", (req, res, next) => {
+router.post("/upload", (req, res) => {
   upload(req, res, function (err) {
     if (err) {
       return res.render("index", { error: err.message })
