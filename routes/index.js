@@ -25,9 +25,10 @@ router.post("/upload", (req, res, next) => {
 
     )
     saveOriginals(originals)
+    let myData= loadOriginals()
     // res.send("oke")
     res.render("originals", {
-      images: originals,
+      images: myData,
       path: "images/originals/"
     })
   })
