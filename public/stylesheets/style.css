@@ -1,13 +1,17 @@
 body { 
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  flex: 1 0 auto;
 }
 
 a {
   color: #00B7FF;
 }
 
-.main-section {
+.main {
   padding: 50px;
+  /* display: flex;
+  flex-direction: column;
+  height: calc(100vh- 56px); */
 }
 
 
